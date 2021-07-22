@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap');
+
+      * {
+        /* Reset do CSS */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Cairo', sans-serif;
+      }
+
+      .video {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+
+        /* para manipular a ordem dos elementos na tela */
+        z-index: 1;
+      }
+
+      .login {
+        z-index: 2;
+        position: absolute;
+        width: 80%;
+        max-width: 500px;
+        padding: 20px;
+        background-color: #ffffff;
+
+        border: 2px solid #454545;
+
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .login h3 {
+        text-align: center;
+        padding: 8px 0;
+      }
+
+      .login input[type='email'],
+      input[type='password'] {
+        width: 100%;
+        height: 30px;
+        border: 1px solid #cccccc;
+        margin-bottom: 10px;
+        padding: 0 0 0 5px;
+      }
+
+      .login input[type='submit'] {
+        width: 100%;
+        height: 35px;
+        background-color: #333333;
+        color: #ffffff;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop class="video">
+      <source src="rain.mp4" type="video/mp4" />
+    </video>
+
+    <div class="login">
+      <h3>Área de LOGIN</h3>
+      <form>
+        <input id="email"
+          type="email"
+          placeholder="nome@email.com"
+          name="email"
+          maxlength="50"
+          required
+        />
+        <input id="password"
+          type="password"
+          placeholder="senha alfanumérica de 08 dígitos"
+          pattern="[a-zA-Z0-9]+"
+          minlength="6"
+          maxlength="8"
+          required
+        />
+        <input type="submit" value="Entrar" onclick="validationLogin()" />
+      </form>
+    </div>
+    <script src="script/script.js"></script>
+  </body>
+</html>
